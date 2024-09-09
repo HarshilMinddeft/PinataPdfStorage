@@ -10,11 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
     "@pinata/sdk": "^2.1.0",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "pinata": "^1.0.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.10"
   }
 }
