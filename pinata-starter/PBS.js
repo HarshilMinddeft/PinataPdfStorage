@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/');
   },
-  
+
   filename: (req, file, cb) => {
     cb(null, file.originalname);
   }
@@ -45,7 +45,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         ...data.getHeaders()
       }
     });
-    console.log(res.data)
+
+    // console.log(res.data)
     const fileUrl = `https://brown-leading-scallop-142.mypinata.cloud/ipfs/${response.data.IpfsHash}?pinataGatewayToken=${process.env.ACCESS_TOKEN}`;
     res.json({
         IpfsHash: response.data.IpfsHash,

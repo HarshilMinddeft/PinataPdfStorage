@@ -19,13 +19,12 @@ function App() {
 
     const formData = new FormData();
     formData.append('file', file);
-
     try {
       const response = await fetch('http://localhost:5000/upload', {
         method: 'POST',
         body: formData,
         headers: {
-          'Accept': 'application/json', 
+          'Accept': 'application/json',
         }
       });
 
@@ -46,10 +45,10 @@ function App() {
   return (
     <div className="App">
       <center>
-      <h1>Upload PDF to Pinata</h1>
+      <h1 className='text-4xl pt-10 pb-10'>Upload PDF to Pinata</h1>
       <form onSubmit={handleSubmit}>
-        <input type="file" accept="application/pdf" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
+        <input className=' flex items-start pb-2 pt-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400' type="file" accept="application/pdf" onChange={handleFileChange} />
+        <button className=' flex items-start mt-9 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' type="submit">Upload</button>
       </form>
       <p>{uploadStatus}</p>
       {ipfsData && (
